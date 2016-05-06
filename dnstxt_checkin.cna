@@ -1,5 +1,5 @@
 on beacon_initial_empty {
-    biniput($1, "[Acting on NEW DNS Beacon]");
+    binput($1, "[Acting on NEW DNS Beacon]");
 
    # change to DNS TXT
     bmode($1, "dns-txt");
