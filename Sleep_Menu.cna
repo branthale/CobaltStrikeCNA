@@ -3,16 +3,25 @@
 popup beacon_top {
         menu "Sleep with Note" {
                 item "Sleep 300 Jitter 20" {
-                        bsleep($1, 300, 20);
-                        bnote($1, "Sleep 300 Jitter 20");
+                local('$bid');
+			foreach $bid ($1) {
+                                bsleep($1, 300, 20);
+                                bnote($1, "Sleep 300 Jitter 20");
+                         }
                 }
                 item "Sleep 900 Jitter 20" {
-                        bsleep($1, 900, 20);
-                        bnote($1, "Sleep 900 Jitter 20");
+                        local('$bid');
+				foreach $bid ($1) {
+                                        bsleep($1, 900, 20);
+                                        bnote($1, "Sleep 900 Jitter 20");
+                                }
                 }
                 item "Sleep 3600 Jitter 15" {
-                        bsleep($1, 3600, 15);
-                        bnote($1, "Sleep 3600 Jitter 15");
+                        local('$bid');
+				foreach $bid ($1) {
+                                        bsleep($1, 3600, 15);
+                                        bnote($1, "Sleep 3600 Jitter 15");
+                                }
                 }
         }
 }
