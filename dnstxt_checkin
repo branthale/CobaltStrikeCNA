@@ -1,12 +1,24 @@
 on beacon_initial_empty {
-        biniput($1, "[Acting on NEW DNS Beacon]");
+    biniput($1, "[Acting on NEW DNS Beacon]");
 
-        # change to DNS TXT
-        bmode($1, "dns-txt");
+   # change to DNS TXT
+    bmode($1, "dns-txt");
 
-        bsleep ($1, 10, 10);
-        bnote($1, "Tasked to Checkin");
-        action("********BOOM***********");
-        # request checkin
-        bcheckin($1);
+   # Sleep 10 with 10% jitter
+
+   bsleep ($1, 10, 10);
+
+  # Add a note to the beacon and fire a boom on event viewer
+
+   bnote($1, "Tasked to Checkin");
+  action("********BOOM***********");
+# request checkin
+bcheckin($1);
+
+#Good place to add a spawn
+
+# Sleep 3600 Jitter 20%
+
+ bsleep ($1, 3600, 20);
+
 }
