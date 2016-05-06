@@ -1,0 +1,12 @@
+on beacon_initial_empty {
+        biniput($1, "[Acting on NEW DNS Beacon]");
+
+        # change to DNS TXT
+        bmode($1, "dns-txt");
+
+        bsleep ($1, 10, 10);
+        bnote($1, "Tasked to Checkin");
+        action("********BOOM***********");
+        # request checkin
+        bcheckin($1);
+}
